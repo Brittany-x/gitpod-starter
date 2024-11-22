@@ -1,0 +1,9 @@
+uuid: d0be3b8b-e473-4b2e-888a-83e54421fc82
+langcode: en
+status: true
+dependencies: {  }
+name: 'Cooking method'
+vid: cooking_method
+description: null
+weight: 0
+new_revision: false

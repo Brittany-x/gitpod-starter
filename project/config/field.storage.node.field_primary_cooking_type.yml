@@ -1,0 +1,20 @@
+uuid: 5ae27e86-7146-4518-bc9e-5f8e3cb73473
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_primary_cooking_type
+field_name: field_primary_cooking_type
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

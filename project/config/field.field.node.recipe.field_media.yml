@@ -1,0 +1,31 @@
+uuid: 1b12e94b-c40b-41fc-852a-57f1dcd9e632
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media
+    - media.type.image
+    - media.type.video
+    - node.type.recipe
+id: node.recipe.field_media
+field_name: field_media
+entity_type: node
+bundle: recipe
+label: Media
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video: video
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

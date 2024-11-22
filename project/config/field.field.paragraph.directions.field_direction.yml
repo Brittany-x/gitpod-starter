@@ -1,0 +1,22 @@
+uuid: 7e82bf54-0f41-4926-8fed-a4d982d58714
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_direction
+    - paragraphs.paragraphs_type.directions
+  module:
+    - text
+id: paragraph.directions.field_direction
+field_name: field_direction
+entity_type: paragraph
+bundle: directions
+label: Direction
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

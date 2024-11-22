@@ -17,6 +17,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_ui: 0
   file: 0
@@ -25,6 +26,8 @@ module:
   history: 0
   image: 0
   link: 0
+  media: 0
+  media_library: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
@@ -43,6 +46,7 @@ module:
   user: 0
   views_ui: 0
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   olivero: 0

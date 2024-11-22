@@ -1,0 +1,38 @@
+uuid: 4898bbdb-57a0-4299-b98d-bb141bffd3fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.recipe.body
+    - field.field.node.recipe.field_diet_types
+    - field.field.node.recipe.field_directions
+    - field.field.node.recipe.field_media
+    - field.field.node.recipe.field_primary_cooking_type
+    - node.type.recipe
+  module:
+    - text
+    - user
+id: node.recipe.teaser
+targetEntityType: node
+bundle: recipe
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_diet_types: true
+  field_directions: true
+  field_media: true
+  field_primary_cooking_type: true
