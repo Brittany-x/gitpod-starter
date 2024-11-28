@@ -4,8 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.recipe.body
+    - field.field.node.recipe.field_category
+    - field.field.node.recipe.field_chef
+    - field.field.node.recipe.field_cooking_time
+    - field.field.node.recipe.field_cuisine
     - field.field.node.recipe.field_diet_types
+    - field.field.node.recipe.field_difficulty_level
     - field.field.node.recipe.field_directions
+    - field.field.node.recipe.field_ingredients
     - field.field.node.recipe.field_media
     - field.field.node.recipe.field_primary_cooking_type
     - node.type.recipe
@@ -35,9 +41,52 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_category:
+    type: entity_reference_autocomplete
+    weight: 129
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_chef:
+    type: entity_reference_autocomplete
+    weight: 127
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cooking_time:
+    type: number
+    weight: 131
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_cuisine:
+    type: entity_reference_autocomplete
+    weight: 126
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_diet_types:
     type: options_select
     weight: 123
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_difficulty_level:
+    type: options_select
+    weight: 128
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -60,6 +109,14 @@ content:
         collapse_edit_all: '0'
         convert: '0'
         duplicate: '0'
+    third_party_settings: {  }
+  field_ingredients:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_media:
     type: media_library_widget

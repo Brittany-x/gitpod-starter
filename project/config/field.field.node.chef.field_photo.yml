@@ -1,0 +1,29 @@
+uuid: f50b43e7-88ad-44b0-b29d-710c0db620cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo
+    - media.type.image
+    - node.type.chef
+id: node.chef.field_photo
+field_name: field_photo
+entity_type: node
+bundle: chef
+label: Photo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

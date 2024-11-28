@@ -1,0 +1,30 @@
+uuid: 5a8ee243-6730-49b7-a5a3-59866160a0e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_difficulty_level
+field_name: field_difficulty_level
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: easy
+      label: Easy
+    -
+      value: medium
+      label: Medium
+    -
+      value: difficult
+      label: Difficult
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

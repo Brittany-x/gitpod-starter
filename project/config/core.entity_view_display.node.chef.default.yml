@@ -1,0 +1,47 @@
+uuid: fca12e9a-262c-4b0f-8de0-33d290e293a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.chef.body
+    - field.field.node.chef.field_photo
+    - field.field.node.chef.field_specialty
+    - node.type.chef
+  module:
+    - text
+    - user
+id: node.chef.default
+targetEntityType: node
+bundle: chef
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_specialty:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

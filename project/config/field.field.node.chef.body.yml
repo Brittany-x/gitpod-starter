@@ -1,0 +1,24 @@
+uuid: 10baa7d7-60aa-4c30-a9d8-5256607532a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.chef
+  module:
+    - text
+id: node.chef.body
+field_name: body
+entity_type: node
+bundle: chef
+label: Bio
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -16,10 +16,15 @@
     ],
     "require": {
         "composer/installers": "^2.3",
+        "drupal/admin_toolbar": "^3.5",
+        "drupal/better_exposed_filters": "^7.0",
         "drupal/core-composer-scaffold": "^11.0",
         "drupal/core-project-message": "^11.0",
         "drupal/core-recommended": "^11.0",
+        "drupal/devel": "^5.3",
         "drupal/paragraphs": "^1.18",
+        "drupal/smart_trim": "^2.2",
+        "drupal/views_data_export": "^1.5",
         "drush/drush": "^13.2"
     },
     "require-dev": {
