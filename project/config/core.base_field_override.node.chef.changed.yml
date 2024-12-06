@@ -1,0 +1,18 @@
+uuid: 1b39947c-084c-4ae9-94aa-19a2ea5be135
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.chef
+id: node.chef.changed
+field_name: changed
+entity_type: node
+bundle: chef
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

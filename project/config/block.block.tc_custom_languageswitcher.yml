@@ -1,0 +1,28 @@
+uuid: 87a49d4d-1934-4b82-89ff-74e63edf145c
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - tc_custom
+id: tc_custom_languageswitcher
+theme: tc_custom
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility:
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en
+      fr: fr

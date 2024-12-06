@@ -1,0 +1,18 @@
+uuid: fee02231-8052-42e3-b6cb-fb0fe3c2cd2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.recipe
+id: node.recipe.created
+field_name: created
+entity_type: node
+bundle: recipe
+label: 'Authored on'
+description: 'The date and time that the content was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

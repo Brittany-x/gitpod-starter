@@ -1,0 +1,20 @@
+uuid: 7a1a12b9-59ed-4008-8b6c-30f10f92ab1c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tc_custom
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: tc_custom_primary_admin_actions
+theme: tc_custom
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

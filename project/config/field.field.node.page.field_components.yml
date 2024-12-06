@@ -1,0 +1,34 @@
+uuid: e189702b-4966-44eb-98c2-4e4ab0faf010
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components
+    - node.type.page
+    - paragraphs.paragraphs_type.image_card
+  module:
+    - entity_reference_revisions
+id: node.page.field_components
+field_name: field_components
+entity_type: node
+bundle: page
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image_card: image_card
+    negate: 0
+    target_bundles_drag_drop:
+      directions:
+        weight: 3
+        enabled: false
+      image_card:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions

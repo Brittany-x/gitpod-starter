@@ -32,3 +32,4 @@ content:
 hidden:
   field_photo: true
   field_specialty: true
+  langcode: true

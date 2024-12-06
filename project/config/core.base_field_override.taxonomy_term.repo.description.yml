@@ -1,0 +1,21 @@
+uuid: b2329cc1-1cd5-4ffa-9071-7eb7e295d564
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.repo
+  module:
+    - text
+id: taxonomy_term.repo.description
+field_name: description
+entity_type: taxonomy_term
+bundle: repo
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

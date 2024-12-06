@@ -1,0 +1,20 @@
+uuid: 63379830-ee8b-4d32-a957-2b9e3e1198f8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tc_custom
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: tc_custom_page_title
+theme: tc_custom
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,18 @@
+uuid: dbeee0aa-9535-493d-9570-9bd89b541314
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cooking_method
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.cooking_method
+target_entity_type_id: taxonomy_term
+target_bundle: cooking_method
+default_langcode: site_default
+language_alterable: false

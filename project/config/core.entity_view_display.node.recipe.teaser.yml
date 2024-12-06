@@ -76,3 +76,4 @@ hidden:
   field_directions: true
   field_ingredients: true
   field_primary_cooking_type: true
+  langcode: true

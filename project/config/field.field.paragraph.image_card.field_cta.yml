@@ -1,0 +1,23 @@
+uuid: 25a822b3-07e7-4518-abb9-eb0fdddd9ae0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta
+    - paragraphs.paragraphs_type.image_card
+  module:
+    - link
+id: paragraph.image_card.field_cta
+field_name: field_cta
+entity_type: paragraph
+bundle: image_card
+label: CTA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

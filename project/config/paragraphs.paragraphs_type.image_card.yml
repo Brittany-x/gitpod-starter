@@ -1,0 +1,10 @@
+uuid: 8fa34e91-baab-4e0f-b7ba-da09176bdc2e
+langcode: en
+status: true
+dependencies: {  }
+id: image_card
+label: 'Image Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,18 @@
+uuid: facc7c1d-a9bb-4ab9-8b9e-58bcec966049
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.repo
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.repo
+target_entity_type_id: taxonomy_term
+target_bundle: repo
+default_langcode: site_default
+language_alterable: false

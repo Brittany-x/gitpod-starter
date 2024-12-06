@@ -1,0 +1,32 @@
+uuid: 5d5b9216-0a23-4a9c-8652-659642cfafdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recipes
+  module:
+    - node
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__recipes_block_3
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:recipes-block_3'
+settings:
+  id: 'views_block:recipes-block_3'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      recipe: recipe

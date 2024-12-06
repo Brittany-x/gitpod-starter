@@ -1,0 +1,18 @@
+uuid: be7f8708-5609-47f6-907b-0aca0017f8ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.directions
+id: paragraph.directions.created
+field_name: created
+entity_type: paragraph
+bundle: directions
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

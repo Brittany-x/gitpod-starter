@@ -1,0 +1,33 @@
+uuid: 087c50a5-e8b1-4fa3-a1c4-052d01733fd2
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: recipes_in_english
+label: 'Recipes in English'
+type: 'canonical_entities:node'
+pattern: '/recipe/[node:title]'
+selection_criteria:
+  954b21e6-8645-4215-98da-1594f6ab6f0d:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 954b21e6-8645-4215-98da-1594f6ab6f0d
+    context_mapping:
+      node: node
+    bundles:
+      recipe: recipe
+  ea63073f-6625-41e2-b8c7-473a77c3e494:
+    id: language
+    negate: false
+    uuid: ea63073f-6625-41e2-b8c7-473a77c3e494
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -1,0 +1,22 @@
+uuid: 9947530c-01b3-44a2-b878-cabadc438b07
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - tc_custom
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: tc_custom_help
+theme: tc_custom
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

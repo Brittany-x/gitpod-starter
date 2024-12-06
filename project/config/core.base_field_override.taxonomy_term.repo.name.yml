@@ -1,0 +1,18 @@
+uuid: a14a2b70-25e0-4dab-8c41-843fbbc24aa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.repo
+id: taxonomy_term.repo.name
+field_name: name
+entity_type: taxonomy_term
+bundle: repo
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

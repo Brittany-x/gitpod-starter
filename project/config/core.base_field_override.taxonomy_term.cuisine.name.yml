@@ -1,0 +1,18 @@
+uuid: 8b5a37ce-6b50-48bd-b0ff-9cd7b78d029b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cuisine
+id: taxonomy_term.cuisine.name
+field_name: name
+entity_type: taxonomy_term
+bundle: cuisine
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

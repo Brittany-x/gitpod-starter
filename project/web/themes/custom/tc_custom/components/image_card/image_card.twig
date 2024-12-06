@@ -1,0 +1,26 @@
+{%
+  set classes = [
+    'tc-image-card'
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+
+    <div class="tc-image-card__image">
+        {{ card_image }}
+    </div>
+
+    {% block headerSlot %}
+    <h2 class="tc-image-card__title">
+        {{ card_title }}
+    </div>
+    {% endblock headerSlot %}
+
+    <div class="tc-image-card__description">
+        {{ card_description }}
+    </div>
+
+    <div class="tc-image-card__cta">
+        {{ card_cta }}
+    </div>
+</div>

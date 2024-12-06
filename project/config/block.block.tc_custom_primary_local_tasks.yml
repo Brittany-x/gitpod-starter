@@ -1,0 +1,22 @@
+uuid: 1fce81ad-4b2b-4e07-a195-07063a01a528
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tc_custom
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: tc_custom_primary_local_tasks
+theme: tc_custom
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

@@ -1,0 +1,18 @@
+uuid: 10964c0c-2ebf-4cab-b64b-11930df8e811
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cuisine
+id: taxonomy_term.cuisine.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: cuisine
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

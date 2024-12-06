@@ -1,0 +1,23 @@
+uuid: 753cd881-71f1-46b9-8087-aa47dd40a5ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - tc_custom
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: tc_custom_search_form_wide
+theme: tc_custom
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

@@ -1,0 +1,32 @@
+uuid: 1f04c19e-f1a0-4572-9cdd-2daeb5a8132f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recipes
+  module:
+    - node
+    - views
+  theme:
+    - tc_custom
+id: tc_custom_views_block__recipes_block_1
+theme: tc_custom
+region: sidebar
+weight: -9
+provider: null
+plugin: 'views_block:recipes-block_1'
+settings:
+  id: 'views_block:recipes-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      recipe: recipe

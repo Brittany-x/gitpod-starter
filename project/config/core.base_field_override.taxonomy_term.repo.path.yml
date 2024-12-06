@@ -1,0 +1,20 @@
+uuid: 64881055-729c-4aae-8fed-53e14a6f0f97
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.repo
+  module:
+    - path
+id: taxonomy_term.repo.path
+field_name: path
+entity_type: taxonomy_term
+bundle: repo
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

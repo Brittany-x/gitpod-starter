@@ -1,0 +1,18 @@
+uuid: 909600cb-853b-40a6-a9e7-bd45852b274d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.repo
+id: taxonomy_term.repo.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: repo
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
