@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Drupal\download_files\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
@@ -55,6 +57,14 @@ final class DownloadFilesBlock extends BlockBase {
     $form['#title'] = $this->t('Get your files here!');
 
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function blockAccess(AccountInterface $account): AccessResult {
+    $has_access = $account->hasPermission('access download files form');
+    return AccessResult::allowedIf($has_access);
   }
 
 }
