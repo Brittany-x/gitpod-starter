@@ -45,10 +45,10 @@ final class DownloadFilesForm extends FormBase {
 
   public function getMediaOptions() {
     // Get media items using Database Abstraction Layer.
-    $results = \Drupal::database()
-      ->select('media_field_data', 'm')
-      ->fields('m', ['mid', 'name'])
-      ->condition('m.status', 1);
+    // $results = \Drupal::database()
+    //   ->select('media_field_data', 'm')
+    //   ->fields('m', ['mid', 'name'])
+    //   ->condition('m.status', 1);
 
     // This is useful to get the ID of the file referenced. This table works only for the document media type,
     // we would need to add more joins for other tables/media types.
@@ -59,16 +59,31 @@ final class DownloadFilesForm extends FormBase {
     // $results->leftJoin('file_managed', 'f', 'mf.field_media_file_target_id = f.fid');
     // $results->fields('f', ['uri']);
 
-    $results = $results->execute()->fetchAll();
+    // $results = $results->execute()->fetchAll();
 
     // select m.mid, m.vid, m.name, mf.field_media_file_target_id, f.uri 
     // from media_field_data as m 
     // left join media__field_media_file as mf on m.mid = mf.entity_id and m.vid = mf.revision_id
     // left join file_managed as f on mf.field_media_file_target_id = f.fid;
 
+    // $options = [];
+    // foreach ($results as $media) {
+    //   $options[$media->mid] = $media->name;
+    // }
+
+    // Using the Entity Query --------------------------------------------------------------------------
+    $ids = \Drupal::entityQuery('media')
+      ->condition('status', 1)
+      ->condition('bundle', ['media'], 'IN')
+      ->accessCheck()
+      ->execute();
+
+    $results = Media::loadMultiple($ids);
+
     $options = [];
     foreach ($results as $media) {
-      $options[$media->mid] = $media->name;
+      // $options[$media->field_media_image->entity->uri->value] = $media->label();
+      $options[$media->id()] = $media->label();
     }
 
     return $options;
