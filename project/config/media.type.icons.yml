@@ -1,0 +1,13 @@
+uuid: 252fb62d-cf54-4f19-b44b-8589733f0e7a
+langcode: en
+status: true
+dependencies: {  }
+id: icons
+label: Icons
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

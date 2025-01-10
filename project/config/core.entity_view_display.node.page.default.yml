@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_youtube_id
     - node.type.page
   module:
     - text
     - user
+    - youtube_video_formatter
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -22,8 +24,20 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  field_youtube_id:
+    type: youtube_video_formatter
+    label: above
+    settings:
+      width: '1200'
+      height: '600'
+    third_party_settings: {  }
+    weight: 102
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 101
     region: content
 hidden:
   langcode: true
+  search_api_excerpt: true

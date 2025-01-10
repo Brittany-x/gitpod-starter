@@ -1,0 +1,33 @@
+uuid: 0b6b370d-3798-4d89-b04f-32f0091c9334
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.icons.field_media_image_1
+    - image.style.large
+    - media.type.icons
+  module:
+    - image
+id: media.icons.default
+targetEntityType: media
+bundle: icons
+mode: default
+content:
+  field_media_image_1:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

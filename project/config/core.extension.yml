@@ -23,12 +23,14 @@ module:
   dblog: 0
   devel: 0
   devel_generate: 0
+  download_files: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  hello_world: 0
   help: 0
   history: 0
   image: 0
@@ -65,6 +67,7 @@ module:
   views_data_export: 0
   views_ui: 0
   workflows: 0
+  youtube_video_formatter: 0
   pathauto: 1
   content_translation: 10
   views: 10

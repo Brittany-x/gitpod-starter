@@ -1,0 +1,25 @@
+uuid: 08cf88f0-b0b5-4115-ae35-e464f2d951a5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1e15805b-0504-49d6-8c1f-42ccd52c59b8'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: olivero_testcontentblock
+theme: olivero
+region: footer_top
+weight: 0
+provider: null
+plugin: 'block_content:1e15805b-0504-49d6-8c1f-42ccd52c59b8'
+settings:
+  id: 'block_content:1e15805b-0504-49d6-8c1f-42ccd52c59b8'
+  label: 'Test content block'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
