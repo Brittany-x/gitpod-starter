@@ -1,0 +1,5 @@
+allowed_media_types:
+  icons: icons
+  video: video
+  document: 0
+  media: 0
