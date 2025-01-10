@@ -76,10 +76,13 @@ final class DownloadFilesForm extends FormBase {
     //   $options[$media->mid] = $media->name;
     // }
 
+    $config = \Drupal::config('download_files.settings');
+    $media_types = $config->get('allowed_media_types');
+
     // Using the Entity Query --------------------------------------------------------------------------
     $ids = \Drupal::entityQuery('media')
       ->condition('status', 1)
-      ->condition('bundle', ['media'], 'IN')
+      ->condition('bundle', $media_types, 'IN')
       ->accessCheck()
       ->execute();
 
@@ -127,10 +130,13 @@ final class DownloadFilesForm extends FormBase {
         // The Image media type has a field (field_media_image) which is a File reference, so we have to access the 
         // entity before we can access the uri.
         $uri = $media->field_media_image->entity->uri->value;
-        $response = new BinaryFileResponse($uri);
-        $response->setContentDisposition('attachment');
-        $form_state->setResponse($response);
         break;
+      case 'icons':
+          // This is for images.
+          // The Image media type has a field (field_media_image) which is a File reference, so we have to access the 
+          // entity before we can access the uri.
+          $uri = $media->field_media_image_1->entity->uri->value;
+          break;
       default:
         // Document or files.
         // The Document media type has a field (field_media_file) which is a File reference, so we have to access the 
@@ -138,10 +144,13 @@ final class DownloadFilesForm extends FormBase {
         // We're using this field as the default because this field name would be useful in those cases, though we should still
         // add an if to check if the field actually exists.
         $uri = $media->field_media_file->entity->uri->value;
-        $response = new BinaryFileResponse($uri);
-        $response->setContentDisposition('attachment');
-        $form_state->setResponse($response);
         break; 
+    }
+
+    if ($uri) {
+      $response = new BinaryFileResponse($uri);
+      $response->setContentDisposition('attachment');
+      $form_state->setResponse($response);
     }
   }
 
