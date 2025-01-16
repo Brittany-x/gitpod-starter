@@ -758,6 +758,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 // Automatically generated include for settings managed by ddev.
 if (file_exists(__DIR__ . '/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 'true') {
+  $config["config_split.config_split.dev"]["status"] = TRUE;
   include __DIR__ . '/settings.ddev.php';
 }
 
