@@ -1,0 +1,7 @@
+name: 'Audit'
+type: module
+description: 'Provides an audit system that keeps track of when any content entity is deleted.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - hook_event_dispatcher:core_event_dispatcher

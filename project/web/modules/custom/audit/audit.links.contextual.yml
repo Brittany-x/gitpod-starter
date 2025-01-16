@@ -1,0 +1,10 @@
+entity.deletion_record.edit_form:
+  route_name: entity.deletion_record.edit_form
+  group: deletion_record
+  title: 'Edit'
+
+entity.deletion_record.delete_form:
+  route_name: entity.deletion_record.delete_form
+  group: deletion_record
+  title: 'Delete'
+  weight: 10

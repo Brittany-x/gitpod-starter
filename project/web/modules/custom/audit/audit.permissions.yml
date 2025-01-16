@@ -1,0 +1,3 @@
+administer deletion_record:
+  title: 'Administer deletion records'
+  restrict access: true
