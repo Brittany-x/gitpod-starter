@@ -132,7 +132,18 @@ final class DeletionRecord extends RevisionableContentEntityBase implements Dele
 
     $fields['deleted'] = BaseFieldDefinition::create('timestamp')
       ->setLabel(t('Deleted'))
-      ->setDescription(t('The time that the entity was deleted.'));
+      ->setDescription(t('The time that the entity was deleted.'))
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['deleted_entity_author'] = BaseFieldDefinition::create('entity_reference')
       ->setRevisionable(TRUE)
