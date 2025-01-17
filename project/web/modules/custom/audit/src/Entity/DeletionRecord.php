@@ -111,9 +111,33 @@ final class DeletionRecord extends RevisionableContentEntityBase implements Dele
       ])
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['uid'] = BaseFieldDefinition::create('entity_reference')
+    $fields['created'] = BaseFieldDefinition::create('created')
+      ->setLabel(t('Authored on'))
+      ->setDescription(t('The time that the deletion record was created.'))
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['changed'] = BaseFieldDefinition::create('changed')
+      ->setLabel(t('Changed'))
+      ->setDescription(t('The time that the deletion record was last edited.'));
+
+    $fields['deleted'] = BaseFieldDefinition::create('timestamp')
+      ->setLabel(t('Deleted'))
+      ->setDescription(t('The time that the entity was deleted.'));
+
+    $fields['deleted_entity_author'] = BaseFieldDefinition::create('entity_reference')
       ->setRevisionable(TRUE)
-      ->setLabel(t('Author'))
+      ->setLabel(t('Deleted entity author'))
+      ->setDescription(t('Author of the entity being deleted.'))
       ->setSetting('target_type', 'user')
       ->setDefaultValueCallback(self::class . '::getDefaultEntityOwner')
       ->setDisplayOptions('form', [
@@ -133,24 +157,62 @@ final class DeletionRecord extends RevisionableContentEntityBase implements Dele
       ])
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Authored on'))
-      ->setDescription(t('The time that the deletion record was created.'))
-      ->setDisplayOptions('view', [
-        'label' => 'above',
-        'type' => 'timestamp',
-        'weight' => 20,
+    $fields['deleted_by'] = BaseFieldDefinition::create('entity_reference')
+      ->setRevisionable(TRUE)
+      ->setLabel(t('Deleted by'))
+      ->setDescription(t('The user who deleted the entity.'))
+      ->setSetting('target_type', 'user')
+      ->setDefaultValueCallback(self::class . '::getDefaultEntityOwner')
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => 60,
+          'placeholder' => '',
+        ],
+        'weight' => 15,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayOptions('form', [
-        'type' => 'datetime_timestamp',
-        'weight' => 20,
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'author',
+        'weight' => 15,
       ])
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['changed'] = BaseFieldDefinition::create('changed')
-      ->setLabel(t('Changed'))
-      ->setDescription(t('The time that the deletion record was last edited.'));
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setRevisionable(TRUE)
+      ->setLabel(t('Entity type'))
+      ->setRequired(TRUE)
+      ->setSetting('max_length', 255)
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['entity_bundle'] = BaseFieldDefinition::create('string')
+      ->setRevisionable(TRUE)
+      ->setLabel(t('Entity bundle'))
+      ->setRequired(TRUE)
+      ->setSetting('max_length', 255)
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
 
     return $fields;
   }
