@@ -6,6 +6,7 @@ libraries:
   - tc_custom/base
   - tc_custom/messages
   - tc_custom/tailwind
+  - tc_custom/font
   - core/normalize
 regions:
   header: Header

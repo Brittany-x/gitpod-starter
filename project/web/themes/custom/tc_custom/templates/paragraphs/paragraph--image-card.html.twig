@@ -56,7 +56,6 @@
     })
 }#}
 
-
 {% embed('tc_custom:image_card') with {
       card_title: content.field_title,
       card_image: content.field_image,
@@ -66,9 +65,9 @@
     } %}
     
     {% block headerSlot %}
-    <h2 class="tc-image-card__title">
+    <h3 class="tc-image-card__title font-bold">
         {{ content.field_title }}
-    </div>
+    </h3>
     {% endblock headerSlot %}
 
 {% endembed %}

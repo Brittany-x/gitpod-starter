@@ -1,12 +1,19 @@
 {%
   set classes = [
-    'tc-image-card'
+    'tc-image-card',
+    'flex',
+    'flex-col',
+    'gap-4',
+    'bg-slate-200',
+    'p-4',
+    'rounded-md',
+    'font-tilt-neon'
   ]
 %}
 
 <div {{ attributes.addClass(classes) }}>
 
-    <div class="tc-image-card__image">
+    <div class="tc-image-card__image w-full [&_img]:w-full">
         {{ card_image }}
     </div>
 

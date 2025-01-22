@@ -22,3 +22,5 @@ props:
 slots:
   headerSlot: 
     title: Header slots
+  buttons: 
+    title: Buttons
