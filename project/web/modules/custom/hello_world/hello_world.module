@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Hello World module.
+ */
+
+use \Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function hello_world_form_node_chef_form_alter(&$form, FormStateInterface $form_state, $form_id) : void {
+  // ksm($form_id);
+  $form['options']['#open'] = TRUE;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function hello_world_form_alter(&$form, FormStateInterface $form_state, $form_id) : void {
+  // Make promotions options fieldset open by default.
+  $form_ids = [
+    'node_chef_form',
+    'node_article_form',
+    'node_recipe_form',
+  ];
+  if (in_array($form_id, $form_ids)) {
+    $form['options']['#open'] = TRUE;
+  }
+
+  // Show/hide Tags fields in article form depending on user permissions.
+  if ($form_id == 'node_article_form') {
+    // $user = \Drupal::currentUser();
+    $user = \Drupal::service('current_user');
+
+    $form['field_tags']['#access'] = $user->hasPermission('attach tags to articles');
+  }
+}

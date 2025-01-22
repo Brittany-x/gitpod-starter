@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - audit
+id: deletion_record_save_action
+label: 'Save deletion records'
+type: deletion_record
+plugin: entity:save_action:deletion_record
+configuration: {  }

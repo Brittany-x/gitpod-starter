@@ -1,0 +1,7 @@
+field.formatter.settings.youtube_video_formatter:
+  type: mapping
+  label: Youtube Video formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo

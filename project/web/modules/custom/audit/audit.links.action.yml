@@ -1,0 +1,5 @@
+deletion_record.add_form:
+  title: 'Add deletion record'
+  route_name: entity.deletion_record.add_form
+  appears_on:
+    - entity.deletion_record.collection

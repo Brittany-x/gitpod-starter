@@ -1,0 +1,18 @@
+entity.deletion_record.view:
+  title: 'View'
+  route_name: entity.deletion_record.canonical
+  base_route: entity.deletion_record.canonical
+entity.deletion_record.edit_form:
+  title: 'Edit'
+  route_name: entity.deletion_record.edit_form
+  base_route: entity.deletion_record.canonical
+entity.deletion_record.delete_form:
+  title: 'Delete'
+  route_name: entity.deletion_record.delete_form
+  base_route: entity.deletion_record.canonical
+  weight: 10
+entity.deletion_record.collection:
+  title: 'Deletion Records'
+  route_name: entity.deletion_record.collection
+  base_route: system.admin_content
+  weight: 10

@@ -1,0 +1,16 @@
+block.settings.download_files_block:
+  type: block_settings
+  label: 'Download Files Block block'
+  mapping:
+    example:
+      type: string
+      label: Example
+
+# Schema for the configuration files of the Download files module.
+download_files.settings:
+  type: config_object
+  label: 'Download files settings'
+  mapping:
+    allowed_media_types:
+      type: array
+      label: 'Allowed media types'

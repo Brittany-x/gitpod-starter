@@ -1,0 +1,5 @@
+name: 'AMD Blocks'
+type: module
+description: 'Example of Blocks plugins'
+package: Custom
+core_version_requirement: ^10 || ^11

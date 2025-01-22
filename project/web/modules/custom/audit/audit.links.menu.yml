@@ -1,0 +1,5 @@
+entity.deletion_record.collection:
+  title: 'Deletion Records'
+  description: 'List of deletion records.'
+  route_name: entity.deletion_record.collection
+  parent: system.admin_content

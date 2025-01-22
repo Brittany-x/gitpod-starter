@@ -1,0 +1,5 @@
+name: 'Download files'
+type: module
+description: '@todo Add description.'
+package: 'Custom'
+core_version_requirement: ^10 || ^11

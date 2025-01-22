@@ -1,0 +1,3 @@
+services:
+  amd_blocks.text_transformations:
+    class: Drupal\amd_blocks\TextTransformations

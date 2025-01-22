@@ -1,0 +1,5 @@
+name: 'Youtube video formatter'
+type: module
+description: 'Added a formatter for embedding Youtube videos based on video ID.'
+package: 'Custom'
+core_version_requirement: ^10 || ^11
