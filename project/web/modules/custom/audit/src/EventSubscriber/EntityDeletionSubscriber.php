@@ -7,13 +7,43 @@ namespace Drupal\audit\EventSubscriber;
 use Drupal\audit\Event\IncidentReport;
 use Drupal\audit\Event\IncidentReportEvents;
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
+use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Session\AccountProxy;
 use Drupal\core_event_dispatcher\EntityHookEvents;
 use Drupal\core_event_dispatcher\Event\Entity\EntityDeleteEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use \Drupal\Core\Logger\LoggerChannelFactory;
+
 /**
  * @todo Add description for this subscriber.
  */
 final class EntityDeletionSubscriber implements EventSubscriberInterface {
+
+  /**
+   * Stores the current_user service.
+   * @var Drupal\Core\Session\AccountProxy
+   */
+  protected $currentUser;
+
+  /**
+   * The entity type manager service.
+   * 
+   * @var Drupal\Core\Entity\EntityTypeManager
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Logger factory.
+   * 
+   * @var \Drupal\Core\Logger\LoggerChannelFactory
+   */
+  protected $logger;
+
+  public function __construct(AccountProxy $currentUser, EntityTypeManager $entityTypeManager, LoggerChannelFactory $loggerFactory){
+    $this->currentUser = $currentUser;
+    $this->entityTypeManager = $entityTypeManager;
+    $this->logger = $loggerFactory;
+  }
 
   /**
    * {@inheritdoc}
@@ -46,7 +76,7 @@ final class EntityDeletionSubscriber implements EventSubscriberInterface {
     $data = [
       'label' => $deleted_entity->label(),
       'deleted' => time(),
-      'deleted_by' => \Drupal::currentUser()->id(),
+      'deleted_by' => $this->currentUser->id(),
       'entity_type' => $entity_type,
       'entity_bundle' => $deleted_entity->bundle(),
     ];
@@ -63,7 +93,7 @@ final class EntityDeletionSubscriber implements EventSubscriberInterface {
       $data['changed'] = $deleted_entity->changed;
     }
 
-    $record = \Drupal::entityTypeManager()->getStorage('deletion_record')->create($data);
+    $record = $this->entityTypeManager->getStorage('deletion_record')->create($data);
     $record->save();
   }
 
@@ -76,9 +106,7 @@ final class EntityDeletionSubscriber implements EventSubscriberInterface {
     $entity = $event->getDeletedEntity();
     $report = $event->getDetailedReport();
 
-    $logger_factory = \Drupal::service('logger.factory');
-    $logger = $logger_factory->get('audit');
-    $logger->alert("New incident reported by " . $name . " (" . $email . ") " . "on entity " . $entity . ". Details: " . $report);
+    $this->logger->get('audit')->alert("New incident reported by " . $name . " (" . $email . ") " . "on entity " . $entity . ". Details: " . $report);
     $event->stopPropagation();
   }
 }

@@ -1,5 +1,6 @@
 services:
   audit.event_subscriber:
     class: Drupal\audit\EventSubscriber\EntityDeletionSubscriber
+    arguments: ['@current_user', '@entity_type.manager', '@logger.factory']
     tags:
       - { name: event_subscriber }
