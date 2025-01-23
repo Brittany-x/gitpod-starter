@@ -38,6 +38,18 @@ final class DeletedEntitiesListBlock extends BlockBase {
     }
     $output = $output . '</ol>';
 
+    // Get the URL to the Incident Report form using the route name.
+    $form_url = \Drupal\Core\Url::fromRoute('audit.incident_report');
+
+    $output = $output . '<p>';
+
+    // Add a hyperlink to the incident report form.
+    $output = $output . $this->t('Spotted an issue? <a href="@url">Report an incident</a>.', [
+      '@url' => $form_url->toString(),
+    ]);
+
+    $output = $output. '</p>';
+
     $build['content'] = [
       '#markup' => $output,
     ];
