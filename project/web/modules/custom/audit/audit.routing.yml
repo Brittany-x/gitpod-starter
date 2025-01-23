@@ -1,0 +1,7 @@
+audit.incident_report:
+  path: '/audit/incident-report'
+  defaults:
+    _title: 'Incident Report'
+    _form: 'Drupal\audit\Form\IncidentReportForm'
+  requirements:
+    _permission: 'access content'
