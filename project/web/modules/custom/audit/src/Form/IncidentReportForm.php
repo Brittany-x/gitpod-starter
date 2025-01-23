@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\audit\Form;
 
+use Drupal\audit\Event\IncidentReport;
+use Drupal\audit\Event\IncidentReportEvents;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -37,14 +39,14 @@ final class IncidentReportForm extends FormBase {
       '#required' => TRUE,
     ];
 
-    $form['record'] = [
+    $form['entity'] = [
       '#type' => 'select',
-      '#title' => $this->t('Select the deletion record'),
+      '#title' => $this->t('Select the entity that was incorrectly deleted'),
       '#options' => $this->getDeletedRecordOptions(),
       '#required' => TRUE,
     ];
 
-    $form['description'] = [
+    $form['report'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Detailed report'),
       '#placeholder' => $this->t('Describe the issue in more detail.'),
@@ -66,9 +68,9 @@ final class IncidentReportForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
-    if (mb_strlen($form_state->getValue('description')) < 15) {
+    if (mb_strlen($form_state->getValue('report')) < 15) {
       $form_state->setErrorByName(
-        'description',
+        'report',
         $this->t('Detailed report must be at least 15 characters.'),
       );
     }
@@ -78,6 +80,17 @@ final class IncidentReportForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
+    $reporter_name = $form_state->getValue('name');
+    $reporter_email = $form_state->getValue('email');
+    $entity = $form_state->getValue('entity');
+    $report = $form_state->getValue('report');
+
+    // Create instance of the IncidentReport event object.
+    $event = new IncidentReport($reporter_name, $reporter_email, $entity, $report);
+
+    // Trigger the event.
+    \Drupal::service('event_dispatcher')->dispatch($event, IncidentReportEvents::NEW_INCIDENT);
+    
     $this->messenger()->addStatus($this->t('Your incident report has been submitted.'));
     $form_state->setRedirect('<front>');
   }
