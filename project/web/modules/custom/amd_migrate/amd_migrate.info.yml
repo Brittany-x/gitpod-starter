@@ -1,0 +1,7 @@
+name: 'AMD Migrate'
+type: module
+description: 'Migration scripts for moving content from a CSV file into Drupal.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - migrate:migrate
